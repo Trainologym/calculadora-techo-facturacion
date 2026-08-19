@@ -237,11 +237,6 @@ table.sens td.num{font-family:'HeadFont';font-weight:700;}
   .number-card .value{font-size:32px;}
 }
 </style>
-<script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
-<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 <div class="app" id="app">
@@ -440,7 +435,7 @@ table.sens td.num{font-family:'HeadFont';font-weight:700;}
     var nav = $('navrow');
     var back = $('btnBack'), next = $('btnNext');
     if(i===0){ back.style.visibility='hidden'; next.textContent='Empezar'; nav.style.display='flex'; $('progressLabel').textContent=''; }
-    else if(i===steps.length-1){ nav.style.display='none'; $('progressLabel').textContent=''; try{ if(window.va) window.va('event',{name:'calc_completada'}); }catch(e){} }
+    else if(i===steps.length-1){ nav.style.display='none'; $('progressLabel').textContent=''; }
     else {
       back.style.visibility='visible';
       nav.style.display='flex';
@@ -714,10 +709,6 @@ table.sens td.num{font-family:'HeadFont';font-weight:700;}
   };
   $('btnBack').onclick = function(){
     if(state.step>0) showStep(state.step-1);
-  };
-
-  $('ctaReserva').onclick = function(){
-    try{ if(window.va) window.va('event',{name:'calc_reserva_click'}); }catch(e){}
   };
 
   showStep(0);
